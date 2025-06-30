@@ -1,8 +1,13 @@
 package service
 
-import "github.com/kravz2702-byte/todo-app/pkg/repository"
+import (
+	"github.com/kravz2702-byte/todo-app/pkg/entity"
+	"github.com/kravz2702-byte/todo-app/pkg/repository"
+)
 
-type Authorization interface{}
+type Authorization interface {
+	CreateUser(user entity.User) (int, error)
+}
 
 type TodoList interface{}
 

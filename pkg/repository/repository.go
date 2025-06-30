@@ -1,8 +1,13 @@
 package repository
 
-import "github.com/jmoiron/sqlx"
+import (
+	"github.com/jmoiron/sqlx"
+	"github.com/kravz2702-byte/todo-app/pkg/entity"
+)
 
-type Authorization interface{}
+type Authorization interface {
+	createUser(user entity.User) (int, error)
+}
 
 type TodoList interface{}
 
